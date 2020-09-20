@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>EVERDEVEL - JavaScript - click event</title>
+
+	<style>
+
+	</style>
+	<script>
+
+		function a() {
+			var target = document.getElementsByName('asdf') // name 값이 asdf인 값을 접근하는 코드를 target 변수에 대입
+
+			for (i = 0; i < target.length; i++) { // 반복문 실행 (변수 i에 값 0을 대입하고, name 값이 asdf인 값들의 갯수보다 변수 i의 값이 작으면, 한번 반복할때마다 변수 i의 값을 1씩 증가시키면서 반복해라)
+
+				target[i].checked = true; // name 값이 asdf인 값 중에 배열 변수 i번째 인덱스에 접근 후 checked 속성에 true 값 대입(즉, 체크해라)
+			}
+		}
+
+		function b() {
+			var target = document.getElementsByName('asdf') // name 값이 asdf인 값을 접근하는 코드를 target 변수에 대입
+
+			for (i = 0; i < target.length; i++) { // 반복문 실행 (변수 i에 값 0을 대입하고, name 값이 asdf인 값들의 갯수보다 변수 i의 값이 작으면, 한번 반복할때마다 변수 i의 값을 1씩 증가시키면서 반복해라)
+
+				target[i].checked = false; // name 값이 asdf인 값 중에 i번째(배열변수) 인덱스에 접근 후 checked 속성에 false 값 대입(즉, 체크를 해제해라)
+			}
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<input type="button" name="aaa" value="선택" onclick="a()"> <!-- 선택이라는 버튼을 클릭하면 a함수 호출 -->
+	<input type="button" name="aaa" value="선택" onclick="b()">
+
+	<input type="checkbox" name="asdf">1번 <!-- 체크박스 옆 1번이라고 글자가 써있음 -->
+	<input type="checkbox" name="asdf">2번
+	<input type="checkbox" name="asdf">3번
+
+	</script>
+
+</body>
+
+</html>

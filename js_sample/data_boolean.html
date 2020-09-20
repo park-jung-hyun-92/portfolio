@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+
+
+
+	</style>
+
+	<script>
+
+	// Boolean(변수)
+	// 어떠한 데이터를 boolean형으로 데이터를 변환합니다.
+	//숫자 0, null형 null, undefined형 undefined, 문자열 공백은 Boolean형으로 변환하면 false를 반환합니다. 그외의 값은 true를 반환합니다.
+
+	var str1 = 1; // 변수 str1에 문자열 값 "a"를 대입
+	var str2 = "1";
+	var str3 = "문자11";
+	var str4 = "11문자";
+	var str5 = 0;
+
+    document.write(str1 + typeof(str1) + '<br>'); // typeof(값)는 값이 어떤 데이터 타입인지 알려주는 코드 // str1 값(1) + 어떤 데이터 타입인지(Number)를 출력하고 줄바꿈 해라
+    str1 = Boolean(str1); // str1 값(1)의 데이터 타입을 불린형으로 변경하고 변수 str1에 대입
+    document.write(str1 + typeof(str1) + '<br>'); // str1 값(true) + 어떤 데이터 타입인지(Boolean)를 출력하고 줄바꿈 해라
+
+	document.write(str2 + typeof(str2) + '<br>');  // typeof(값)는 값이 어떤 데이터 타입인지 알려주는 코드 // str2 값("1") + 어떤 데이터 타입인지(String)를 출력하고 줄바꿈 해라
+    str2 = Boolean(str2); // str2 값("1")의 데이터 타입을 불린형으로 변경하고 변수 str2에 대입
+    document.write(str2 + typeof(str2) + '<br>'); // str2 값(true) + 어떤 데이터 타입인지(Boolean)를 출력하고 줄바꿈 해라
+
+	document.write(str3 + typeof(str3) + '<br>');
+    str3 = Boolean(str3);
+    document.write(str3 + typeof(str3) + '<br>');
+
+	document.write(str4 + typeof(str4) + '<br>');
+    str4 = Boolean(str4);
+    document.write(str4 + typeof(str4) + '<br>');
+
+	document.write(str5 + typeof(str5) + '<br>'); // typeof(값)는 값이 어떤 데이터 타입인지 알려주는 코드 // str5 값(0) + 어떤 데이터 타입인지(Number)를 출력하고 줄바꿈 해라
+    str5 = Boolean(str5); // str5 값(0)의 데이터 타입을 불린형으로 변경하고 변수 str5 대입
+    document.write(str5 + typeof(str5)); // str5 값(false)) + 어떤 데이터 타입인지(Boolean)를 출력해라
+
+	</script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

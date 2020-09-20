@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- jQuery 를 페이지에 참조 -->
+
+	<style>
+		div,
+		pre {
+			background: #FFF;
+			padding: 10px;
+			margin: 10px;
+		}
+
+		table {
+			border: 1px solid #AAA;
+		}
+
+		td {
+			border: 1px solid #AAA;
+			width: 25px;
+			height: 25px;
+		}
+	</style>
+
+	<script>
+		// 1. form > 사용자의 데이터를 서버로 전송을 하는 막중한 임무를 가진 요소
+		// 2. 서버간의 데이터 통신을 위해 form에 있는 데이터를 직렬화 하거나 url을 통해 전달을 하는 경우가 있음 [이럴때를 위해 jQuery에서는 form 데이터를 쉽게 직렬화 시킬 수 있는 메서드를 제공함]
+		// 2-1. [참고 > Ajax를 이용한 비동기 통신에서는 데이터의 직렬화를 상당히 많이 사용 - 쿼리스트링을 통한 Ajax 관련 데이터를 만들 때는 .serialize()를 사용하시면 됨.]
+
+
+
+		// 1. submit()
+		// 1-1. .submit(handler(eventObject)) > 1. submit()을 호출 > 2. 정의된 handler를 실행 > 3. 리턴 받은 Boolean 값을 통해 서버로 데이터 전송 유/무를 결정함
+		// 1-2. .submit([evenData], handler(eventObject))
+
+		// function sendSubmit() {
+		// 	if (document.getElementById("txtName").value == '') {
+		// 		alert("이름을 입력 하세요.");
+		// 		return;
+		// 	} else {
+		// 		document.form.submit();
+		// 	}
+		// }
+
+
+		// 위 방법을 jQuery 에서 제공하는 .submit(handler);를 사용하게 되면 다음과 같다
+
+		// $('form').submit(function () {
+		// 	if ($('#txtName').val() == '') {
+		// 		alert("이름을 입력 하세요.");
+		// 		return false;
+		// 	} else {
+		// 		return true;
+		// 	}
+		// });
+
+
+
+		// 2. .serialize() > 서버간의 데이터 통신을 위해 form에 있는 데이터를 쉽게 직렬화 시킬 수 있는 메서드 [ 쿼리스트링을 통한 Ajax 관련 데이터를 맊들 때는 .serialize()를 사용하시면 된다. ]
+
+		$(document).ready(function () {
+			$('form').submit(function () {
+				var datas = $(this).serialize();
+				alert(datas);
+				return false;
+			});
+		});
+
+		// 위의 방법을 자바스크립트 방법으로(아래)
+
+		function ddd() {
+
+			// a=a_v&b=b_v&c=c_v
+
+			var a_v = document.ggg.a.value;
+			var b_v = document.ggg.b.value;
+			var c_v = document.ggg.c.value;
+
+			alert($('form').serialize());
+
+
+			alert("a=" + a_v + "&" + "b=" + b_v + "&" + "c=" + c_v);
+
+		}
+
+
+
+
+		// 3. .serializeArray() > 서버간의 데이터 통신을 위해 form에 있는 데이터를 쉽게 직렬화 시킬 수 있는 메서드 > 배열 개체로 반환
+
+		// $(document).ready(function () {
+		// 	$('form').submit(function () {
+		// 		var datas = $(this).serializeArray();
+		// 		alert(datas);
+		// 		return false;
+		// 	});
+		// });
+	</script>
+
+</head>
+
+<body>
+
+	<div>
+		<form name="ggg">
+			<input type="text" name="a" value="1" id="a" /><br />
+			<input type="text" name="b" value="2" id="b" /><br />
+			<input type="hidden" name="c" value="3" id="c" /><br />
+			<input type="text" name="d" value="4" id="d" /><br />
+			<input type="text" name="g" value="9" id="g" /><br />
+			<select name="e">
+				<option value="5" selected="selected">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+			</select><br />
+			<input type="submit" name="f" value="Submit" id="f" />
+		</form>
+	</div>
+
+	<input type="button" id="hhh" onclick="ddd()" value="버튼">
+
+
+</body>
+
+</html>

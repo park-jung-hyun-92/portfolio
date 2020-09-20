@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- jQuery 를 페이지에 참조 -->
+
+	<style>
+
+		div,
+		pre {
+			background: #FFF;
+			padding: 10px;
+			margin: 10px;
+		}
+
+		table {
+			border: 1px solid #AAA;
+		}
+
+		td {
+			border: 1px solid #AAA;
+			width: 25px;
+			height: 25px;
+		}
+
+		.a,
+		.b {
+			margin: 5px;
+			padding: 5px;
+		}
+
+		.border {
+			border: 2px solid red;
+		}
+
+		.background {
+			background: yellow;
+		}
+
+		div,
+		pre {
+			background: #FFF;
+			padding: 10px;
+			margin: 10px;
+		}
+
+		table {
+			border: 1px solid #AAA;
+		}
+
+		td {
+			border: 1px solid #AAA;
+			width: 25px;
+			height: 25px;
+		}
+
+	</style>
+
+	<script>
+
+		// Miscellaneous 의 뜻을 사젂에서 찾아 보면 여러 가지 종류의, 이것저것 다양한‟ 이란 뜻을 가지고 있다.
+
+		// 1. .add() 일치하는 요소의 집합에 요소를 추가
+		// 2. .andSelf() 현재 설정 스택에 요소의 이전 설정을 추가
+		// 3. .contents() 텍스트 및 주석 노드를 포함 일치하는 요소 집합의 자식 집합을 반환
+		// 4. .end() 이전 상태로 일치하는 집합을 반환한다.
+
+
+		// 1. .add()
+
+		// $(document).ready(function () {
+
+		//	$("li").add("div > p").css("border","1px solid red"); // li 태그와 추가로 div 태그 하위에 있는 p 태그에 선 굵기는 1px, 선 모양은 실선, 선 색상은 레드로 변경해라
+
+		// });
+
+
+
+		// 2. .andSelf()
+		// 현재 설정 스택에 요소의 이전 설정을 추가
+
+		// $(document).ready(function () {
+
+		// 	$(".b").find(".a").andSelf().addClass("border"); // class 값 b를 찾고 그 안에 calss 값 a를 찾은 후 현재 요소에 class를 추가하고 이전 요소에도 class를 추가
+
+		// 	// $(".b").addClass("border"); // class 값 b에 class를 추가해라
+		// 	// $(".b").find(".a").addClass("border"); // class 값 b 아래 class 값 a에 class를 추가해라
+
+		// 	$(".b").find(".a").addClass("background"); // class 값 b 아래 class 값 a에 class를 추가해라
+
+		// });
+
+
+
+		// 3. contents()
+		// 셀렉터를 통해 선택된 개체 안에 있는 모든 요소를 반환 [ 이 메서드의 경우 filter 메서드와 조합을 통해 많이 사용 ]
+
+		// $(document).ready(function () {
+
+		// 	$("ul").find("li").contents().remove("ul"); // ul 태그를 찾고 그 안에 find()를 통해 li 태그를 찾는다 그리고 contents()를 통해 li 요소에 담겨있는 모든 요소를 찾은 후 remove() 메서드를 통해 ul 태그 제거 됨
+
+		// });
+
+
+
+		// 4. end() >  .end() 메서드 호출 후 바로 이전의 상태로 돌아가는 것을 의미
+
+		$(document).ready(function () {
+
+			$('div').find('p').end().addClass("border"); // div 태그를 찾고 그 안에 p 태그를 찾은 후 다시 이전 상태로 돌아가서 div 태그에 class를 추가해라
+
+		});
+
+	</script>
+
+</head>
+
+<body>
+
+	<div>
+		<ul>
+			<li>list item 1</li>
+			<li>list item 2</li>
+			<li>list item 3</li>
+			<li>list item 4</li>
+		</ul>
+		<p>this is P</p>
+	</div>
+
+
+
+	<div class="b">
+		<p class="a">First Paragraph</p>
+		<p class="a">Second Paragraph</p>
+	</div>
+
+
+
+	<div>
+		<ul>
+			<li>list item 1</li>
+			<li>list item 2
+				<ul>
+					<li>sub item 1</li>
+					<li>sub item 2</li>
+				</ul>
+				3333
+			</li>
+			<li>list item 3</li>
+			<li>list item 4</li>
+		</ul>
+	</div>
+
+</body>
+
+</html>

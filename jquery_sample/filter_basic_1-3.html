@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script src="../js/jquery-3.5.1.min.js"></script> <!-- jQuery 를 페이지에 참조 -->
+
+	<style>
+
+		div {
+			background: #FFF;
+			padding: 10px;
+			margin: 10px;
+		}
+
+		table {
+			border: 1px solid #AAA;
+			width: 100%
+		}
+
+		td {
+			border: 1px solid #AAA;
+		}
+
+	</style>
+
+
+	<script>
+
+		// 1. :not(selector) > Selector 와 일치되는 요소를 제외한 나머지 요소를 반환
+
+		// $(document).ready(function () {
+		// 	$("td:not(.notSelect)").css("background", "blue"); // td 요소중에 클래스명이 notSelect인 항목을 제외한 요소의 집합을 선택하여 배경을 파랑색으로 바꿔라
+		// });
+
+
+
+		// 2. :focus > 현재 포커스가 위치한 요소를 선택(반환) [ 유저의 포커스가 위치한 지점의 위치를 표시하거나, 입력하고 있는 폼 요소를 강조하고 싶을 때 사용 ]
+		// 1.6 이상에서 지원 - jQuery 1.6 버전에서 새롭게 추가된 필터
+
+		$(document).ready(function () {
+
+			// $("#a1").focus().css("background", "#ffcc00"); // id 값이 a1인 곳에 접근 후 포커스(초점.깜빡이) 기능을 넣고 배경색은 주황으로 변경해라
+
+			$("#a1") // id 값이 a1인
+				.focus()
+				.css("background", "#ffcc00")
+
+				.parent() // 요소(id 값이 a1)의 부모(body)에 접근하고
+				.css("background", "#ffee11"); // 접근한 부모(bady)의 배경색을 노랑색으로 변경해라
+
+			// $("#a1").focus().css("background", "#ffcc00").parent().css("background", "#ffcc00"); // 위의 5줄과 동일
+		});
+
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<input type="text" id="a1">111
+
+	<div>
+		<table>
+			<tr>
+				<td class="aaa">#1</td>
+			</tr>
+			<tr>
+				<td>#2</td>
+			</tr>
+			<tr>
+				<td class="notSelect">#3</td>
+			</tr>
+			<tr>
+				<td class="notSelect">#4</td>
+			</tr>
+			<tr></tr>
+			<td class="notSelect">#5</td>
+			</tr>
+			<tr>
+				<td>#6</td>
+			</tr>
+			<tr>
+				<td>#7</td>
+			</tr>
+			<tr>
+				<td>#8</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+-기본
+1. <input type='' name='서버에서 인식할 값' value='서버에 전송할 값'> / [name속성의 값으로 userHobby[취미]를 + value속성의 값은 listeningMusic[음악듣기]를 사용합니다. <input type='' name='userHobby' value='listeningMusic'/> ]
+2. action="값을 보낼 주소"
+3. <label for='연결할 태그의 id속성의 값' >표시할 글</label> ---------- label과 label for는 input 태그처럼 디자인 하기 힘들때 그룹을 묶어주거나 연결해주는 역할
+3-1 <label for='aaa' >ID</label><input type='text' id='aaa' /> [이렇게 사용하면 포커스가 입력폼안으로 맞춰져있으므로] 
+3-2 <label for="aaa">dddd</label><input type="checkbox" id="aaa"> [이렇게 사용하면 체크박스가 아닌 체크박스 앞 글자를 눌러도 체크가됨 = 즉, 글자와 체크박스를 연결해주는 기능이 label for]
+3-3 <lable>ㅋㅋㅋ<input type="checkbox" id="aaa"></lable> > 즉, 위의 예제와 지금 예제와 같은 결과
+-js/css/php
+-js > <script language="javascript"></script>
+-css > <style type="text/css"></style>
+-php > <?php ?>
+
+-윈도우
+window.onload =  < 이것은 윈도우에 모든 코드가 실행 및 출력 된 후 마지막으로 실행하는 문(window.onload = 코드 실행)
+
+-파일쪼개기
+1. CSS [<link rel="stylesheet" href="style.css"/>]
+2. JavaScript [<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>]
+3. JavaScript [<script src="colors.js"></script>]
+
+-표기법
+1.카멜표기법(낙타표기법) - getElementsByName; - 맨 앞에 오는 글자는 소문자로 표기하고, 그 뒤부터 첫 글자를 대문자로 적는 것이다.
+2.파스칼표기법 - GetElementsByName; - 카멜표기법과 거의 흡사하지만 맨 앞에 오는 글자도 대문자로 표기하는 것이다.
+3.스네이크표기법 - Get_Elements_By_Name; - 단어 사이에 언더바를 넣어서 표기하는 것이다. 
+4.헝가리안 표기법 - String strName - 접두어에 자료형을 알아볼수 있게끔 표기하는 것이다. > 예) 문자열은 변수명 앞에 str을 붙인다.
+
+-HTML
+1.HTML [&lt; < (~보다작은<less then 약자>)]
+
+-css 속성
+1.boxShadow / 박스 그림자 기술 [boxShadow = "10px 10px 10px 10px";]
+
+-속성 값
+1. 속성 값 변경 및 지정 선택자.setAttribute(속성명, 속성값)   > 1.지정되어 있는 속성을 바꿀 수도 있음  [ex - this.setAttribute('type','text');] / 2. 속성을 지정해 줄 수도 있음 [ex - this.setAttribute('class','hello');]
+2. 속성 값 가져오기 선택자.getAttribute(속성명) >  [ex - this.setAttribute('input');]
+3. 속성 제거하기 선택자.removeAttribute(속성명)  >  [ex - this.removeAttribute('type');;]
+4. 속성 유무 확인하기 선택자.hasAttribute(속성명) > [ex - 1. 해당 속성이 있다면 true를 반환하고 없다면 false를 반환합니다. 2. 참고로 속성이 없는데 getAttribute를 사용하면 getAttribute(속성명)는 null을 반환합니다.]
+
+-출력
+1.alert() 경고창
+2.document.write() 출력(js)
+3.confirm 선택창(js) > (ex) if ( confirm('수정하시겠습니까') ) { document.write('확인을 누르셨습니다') }
+4.echo 출력(php)
+
+-변수
+1. 변수명에는 영문과 숫자과 언더바(_)만 들어간다. [sos+bob = X(더하기가 들어갔음)]
+2. 변수명은 영문의 대문자와 소문자를 구별한다. 
+3. 변수명의 첫 문자는 숫자가 올 수 없다. [1hi = X(숫자부터 올 수 없음)]
+4. 예약어는 사용 할 수 없다. (예, if,for,while등 외 다수) [if = X(만약에)예약어 사용 금지]
+
+-글로벌변수(전역변수)/로컬변수(지역변수)
+1.전연변수는 어디서든 값을 불러올수있음
+2.지역변수는 해당 지역에서만 값을 불러올수있음 (ex-함수안에서 지역변수 만들었다면, 함수안에서만 가능)
+3.단, (ex-함수안에서 지역변수를 선언하고 추가로 var를 뺀 변수를 선언하면 > 함수 호출시 var를 뺀 변수는 글로벌(전역)변수로 바뀌어 한번 호출한 이후부터는 값을 불러올수 있음)
+
+-변수 사용법 참고오후
+var a = 1;
+a = 10>5?'number':'string'; > 이것은 5보다 10이 크다는 논리연산자가 맞으면 a에 number 문자열을 대입해라 > 라는 것임.
+$a = 1;
+
+-연산자 관련 
+1. 대입연산자(같다) [a=1]
+2. 참고 [x+ =y (x=x+y) / x- =y (x=x-y)]
+
+-비교 연산자 [+ , - , * , / , = , < , > , <= , >=]
+1. == 값만 일치 [1=1 / 1="1" / 1=a / 1=true(boolrean)]
+2. === 값,타입 모두 일치 [1=1 / "1"="1" / 1=a / true(boolrean)=true(boolrean)]
+3. != 값이 다르면 참 [1!=2 / 1!="2"]
+4. !== 값이 다르거나 타입이 다르면 참 [1!==2 / 1!=="1"]
+
+
+-삼항연산자
+document.write((1 == 1) ? "true" : "false");   > ( (조건) ? 조건이 참일 때 실행할 명령문 : 조건이 거짓일 때 실행할 명령문 )
+
+-상수
+const (한번 변수명과 값을 선언하면 해당 변수명은 다른값으로 재선언해도 기존 값에서 변하지 않음) 
+
+-예약어
+
+abstract,case,continue,extends,for,import,long,private,static,throw,var,boolean,catch,default,false,function,in,native,protected,super,throw,void,break,char,do,final,goto,instanceof,new,public,
+switch,transient,while,byte,class,double,finally,if,int,null,return,synchronized,true,with,case,const,else,float,implements,interface,package,short,this,try
+
+-데이터변환
+1.데이터형 확인 typeof()
+2.숫자로 변환 Number()
+3.문자로 변환 String()
+
+-논리연산자
+1.AND 연산자는 모든 값이 참 일때 참을 뱉어냅니다.(&&)
+2.OR 연산자는 값중에 하나라도 참 일때 참을 뱉어 냅니다.(||)
+3.XOR 연산자는 서로 값이 다를때 참을 뱉고 서로 값이 같다면 거짓을 뱉습니다.(^)
+4.++a 먼저 자신을 1증가 시키고 다른 연산을 시작하며 / a++ 먼저 다른 연산을 한후 자신을 1 증가 시킵니다. (--a,a--동일)
+5. ! 반대로 값을 변경
+
+-계속/멈춤
+1.continue; 실행시 해당부분 넘기고 다음단 실행
+2.break;  실행시 해당부분에서 바로 멈춤(해당 부분 값 나타내지 X)
+
+-출력
+js > alert(""); || document.write ("")
+php > echo "문자"; || echo 변수;
+php 배열변수 출력 > echo '<pre>'; + print_r(배열변수); + echo '</pre>'; + exit;
+
+-셀랙터 및 선택자 [셀렉터 getElementsByNameName('네임Name') / 선택자 class="aaa",#id{} ] [ js 접근법 = ex - Document.getElementById('아이디ID').style.color = "red"] 
+1.getElementsByName('네임Name') - input name에 반응하며 > 여러번 속성 지정할 수 있으므로 getElements > 뒤에 's'를 붙이며, > ByName('')[인덱스] > 인덱스 값을 꼭 넣어줘야함 (몇번째에 속성 적용할지)  
+2.getElementsById() - id는 한페이지에 id를 한번 밖에 쓸 수 없으므로 getElements > 's' 붙지 않으며 > getElementsById('') > 이렇게 씀 (아래처럼 인덱스 값 넣어줄 필요 없음)
+3.getElementsByClassName() - class는 같은 이름으로 여러번 속성 지정할 수 있으므로 getElements > 뒤에 's'를 붙이며, >  ClassName('')[인덱스] > 인덱스 값을 꼭 넣어줘야함 (몇번째에 속성 적용할지) 
+4.getElementsByTagName() - 위와 동일
+5.querySelector() - 3가지로 나뉨 > 1. 클래스 document.querySelector('.클래스이름')> 2. 태그 document.querySelector('태그')> 3. 아이디 document.querySelector('#아이디이름') >querySelector('')[인덱스] > 인덱스 값을 꼭 넣어줘야함 (몇번째에 속성 적용할지) 
+6.querySelectorAll() - 3가지로 나뉘는 방법은 위와 동일 > ***위처럼 인덱스 값 넣어주지 않고 전체 속성 반영 가능함***
+
+-페이지이동
+location.href=""; (js)
+
+-이벤트함수 종류 (단, inline 방법으로 사용시에는 앞에 'on'이 붙음) 
+1.submit / 전송
+2.click / 선택문구를 마우스 포인터로 클릭시
+3.change / 선택 문구 옵션을 바꾸면(체인지하면 - ex Select 구문)
+4.scrioll / 스크롤을 내릴 때 마다 작동 > 그래서 스크롤을 내릴 때 마다 다음 자료들이 화면에 나옴
+5.mouseover / 선택 문구에 마우스 포인터를 올리면
+6.mouseout / 마우스 포인터를 선택 문구에서 나가면(빼면?)
+7.mousedown / 마우스 포인터로 선택 문구를 누르는 순간
+8.mouseup / 마우스 포인터로 선택 문구를 떼는 순간
+
+-태그 속성 지정하기
+1.선택자.setAttribute(속성명, 속성값) / 속성 및 값 지정 또는 변경
+2.선택자.getAttribute(속성명) / 속성(ex-type)이 어떤 속성인지 값 확인 > 속성이 없는데 getAttribute를 사용하면 getAttribute(속성명)는 null을 반환
+3.선택자.removeAttribute(속성명) / 속성 제거
+4.선택자.hasAttribute(속성명); / 속성 유무 확인하기 > 속성이 있다면 true 없다면 false를 반환 
+
+-이벤트함수 실행(inline 방법) = "함수명(this)"
+이벤트 함수가 위치한 줄 (예를들어 select라면) (select 시작~끝) 내용을 모두 넘겨주고(t) >  (select 시작~끝)에 해당하는 value 값을 document.form_n_list_2.sort.value 대입. >
+그리고 document.form_n_list_2.sort.value 이것은 이문서.해당하는 폼 접근(폼이름).폼 안에 해당하는 줄 이름 접근(예를들어 input이면 input name).마지막으로 접근한 곳 value 값.
+그리고 document.form_n_list_2.submit(); 이것은 이문서.해당하는 폼 접근(폼이름).submit() <--이것은 함수 - 자동으로 전송
+function fn_n_select_join1(t)
+{
+	document.form_n_list_2.sort.value = t.value;
+	document.form_n_list_2.submit();
+}
+
+-이벤트 함수 실행(또다른 방법) 
+window.onload = function () {
+	var a = document.getElementsByTagName('p')[0];
+	a.addEventListener('click', function () {
+		alert('hello');
+	});
+};
+>> 해석하자면 addEventListener('click', function () { alert('hello'); }); > 클릭 이벤트를 추가하고  누르면 > 함수를 실행 > 출력한다.
+
+-모니터 관련 [크기 값]
+1.screen.width [화면[해상도] 가로길이]
+2.screen.height [화면[해상도] 세로길이]
+3.screen.availWidth [독바(작업표시줄),메뉴바 제외 가로길이]
+4.screen.availHeight [독바(작업표시줄),메뉴바 제외 세로길이]
+5.window.outerWidth [웹 브라우저[인터넷창] 가로길이]
+6.window.outerHeight [웹 브라우저[인터넷창] 세로길이]
+7.window.innerWidth [웹 블라우저 메뉴바 제외 가로길이]
+8.window.innerHeight [웹 블라우저 메뉴바 제외 세로길이]
+
+-db 연결문
+<?php $conn = mysqli_connect('localhost', 'root', '', 'pjh_db'); ?>
+
+-어떤 파일을 불러올때 (include)를 구문을 쓰지만 똑같은 구문을 여러번써서 겹쳐도 한번만 불러올 수 있게 하는 구문 (require_once)
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/function.php'; ?>
+
+-세션 작업할 때 맨위에 필수 [db연결문보다 위에]
+<?php
+  session_start();
+?>
+
+-sql / 쿼리실행 / 결과값 반환
+-[삽입 구문] $sql= "insert into ds_member (num,id,passwore1) values ('','". $m_id ."','". $m_password1."')"; 
+-(insert into tbl (컬럼) values (값) = 컬럼과 값이 서로 동일 || insert into tbl valuse(값) = db컬럼 갯수 동일하게 값)
+
+-[db 해당 컬럼 값 조회하기] $sql= "SELECT * FROM  pjh1 WHERE id  = '$login_userid' AND password1 = '$login_password'";
+
+
+-[쿼리 실행 후 변수에 데이터 담기]
+$result=mysqli_query($conn,$sql)  > 쿼리만 실행하면 mysqli_query($conn,$sql) 
+
+-[실행한 쿼리 배열값으로 결과값 담음]
+$row=myssqli_fatch_array($ressult);
+
+-정렬문(asc or desc)
+"select * from 테이블 order by 컬럼 desc or asc;
+
+-db 값 받기
+$row['컬럼명']
+
+-세션 
+$_SESSION['name']
+
+-get(보안 등급 약해도 될때 - 주소창에 나타남)
+$_GET['name']
+
+-post(보안 등급 강할 때 - 비공개)
+$_POST['name]']
+
+-a태그 [a href] / img태그 [img src] / style태그 [style]
+<a href="/main.php"><img src="/images/logo.png" style="width:150px; height:50px; padding-bottom:30px;">
+
+-ul,li 목록 태그
+<ul><li>회사소개</li></ul>
+
+-옵션 선택 select 태그
+<select><option>111</option><option>222</option>
+
+-div 영역 겹치지 않도록 함
+<div style="clear:left">
+
+-모르겠음
+<link href="/common/css/bootstrap.min.css" rel="stylesheet">
+<script src="/assets/js/ie-emulation-modes-warning.js"></script>

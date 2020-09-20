@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- jQuery 를 페이지에 참조 -->
+
+	<style>
+
+		div {
+			background-color: #EEEEEE;
+			padding: 10px;
+		}
+
+		.a1,
+		.a2 span {
+			width: 100px;
+			height: 80px;
+			float: left;
+			padding: 10px;
+			margin: 10px;
+			background-color: #EEEEEE;
+		}
+
+		div#small {
+			width: 60px;
+			height: 20px;
+			font-size: 12px;
+			background: #fab;
+		}
+
+	</style>
+
+
+	<script>
+
+		// 0. 최근에 출시된 대부분의 브라우저를 지원하고 있으나, IE6 를 포함한 이전의 브라우저에서는 지원을 하고 있지 않으니 사용에 각별한 주의가 필요 [기본 셀렉터의 경우 모든 브라우저를 지원]
+
+		// 1. Child Selector : $(“Parent > Child”) > 부모(Parent) 요소 바로 아래 자식(Child)인 요소를 반환
+
+		$(document).ready(function () {
+			$("ul.siteUrl > li").css("border","1px solid #ff0000"); // ul 태그 중에 class 속성의 값이 “siteUrl”인 요소의 자식 중에 li 항목과 일치하면 선 두께는 1px, 선 색상은 빨강, 선 모양은 실선으로 변경해라
+		});
+
+
+
+		// 2. Descendant Selector : $(“ancestor descendant”) > 조상(Ancestor)과 일치하는 요소에 포함된 모든 후손(Descendant)중에 후손의 요소와 일치하는 모든 항목을 반환
+
+		$(document).ready(function () {
+			$("#siteUrl1 > li").css("border","1px solid #ff0000"); // id 값이 siteUrl1인 요소의 자식 중에 li 항목과 일치하면 선 두께는 1px, 선 색상은 빨강, 선 모양은 실선으로 변경해라
+			$("#siteUrl2 li").css("border","1px solid blue"); // id 값이 siteUrl1인 요소의 자식,후손 중에 li 항목과 일치하면 선 두께는 1px, 선 색상은 파랑, 선 모양은 실선으로 변경해라
+		});
+
+
+		// 3. Next Adjacent Selector : $(“prev + next”) > Prev 요소 바로 다음에 나오는 형제(Adjacent) 수준의 next 요소와 일치하는 항목을 반환
+
+		$(document).ready(function () {
+			$("label + input").css("border","1px solid #ff0000"); // <label> 요소 바로 다음(형제 요소)에 있는 <input> 요소를 찾고 해당 (형제)요소에 선 두께는 1px, 선 색상은 빨강, 선 모양은 실선으로 바꿔라
+		});
+
+
+		// 4. Next Siblings Selector : $(“prev ~ siblings”) > Prev 요소 이후에 형제 요소 중 siblings 와 동일한 요소를 반환
+
+		$(document).ready(function () {
+			$("#prev ~ div").css("border","3px solid blue"); // id 의 값이 prev인 요소를 찾고 해당 요소를 제외한 다음 형제 요소 중에 div 태그와 일치하면 선 두께는 3px, 선 색상은 파랑, 선 모양은 실선으로 바꿔라
+		});
+
+
+		// 3번과 4번 차이점 = 3번은 label 요소를 제외한 바로 다음에 있는 input(형제요소)만 해당  /  4번은 #prev 요소를 제외한 (형제요소) 요소 중에 div만 해당
+
+	</script>
+
+</head>
+<body>
+<div>
+
+	<div>
+		<ul class="siteUrl" id= "siteUrl1">
+			<li>Sqler : http://www.sqler.com</li>
+			<li>jQuery : http://jquery.com</li>
+			<li>
+				<ul>
+					<li>Blog : http://www.hows.kr</li>
+					<li>Community : http://www.hoons.kr</li>
+				</ul>
+			</li>
+			<li>Items</li>
+			<li>Items</li>
+			<li>Items</li>
+		</ul>
+		<ul id="siteUrl2">
+			<li>Sqler : http://www.sqler.com</li>
+			<li>jQuery : http://jquery.com</li>
+			<li>
+				<ul>
+					<li>Blog : http://www.hows.kr</li>
+					<li>Community : http://www.hoons.kr</li>
+				</ul>
+			</li>
+			<li>Items</li>
+			<li>Items</li>
+			<li>Items</li>
+		</ul>
+	</div>
+
+	<div>
+		<form>
+			<label>Name:</label>
+			<input name="name" />
+
+			<fieldset>
+				<label>Newsletter:</label>
+				<input name="newsletter" />
+
+			</fieldset>
+		</form>
+		<input name="none" />
+	</div>
+
+	<div class="a1">div (doesn't match since before #prev)</div>
+	<span id="prev">span#prev</span>
+	<div class="a1">div sibling</div>
+	<div class="a1">div sibling
+		<div id="small">div niece</div>
+	</div class="a1">
+	<span class="a2">span sibling (not div)</span>
+	<div class="a1">div sibling</div>
+
+	</body>
+
+</html>

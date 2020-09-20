@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- jQuery 를 페이지에 참조 -->
+
+	<style>
+		div {
+			background: #FFF;
+			padding: 10px;
+			margin: 10px;
+		}
+
+		table {
+			border: 1px solid #AAA;
+		}
+
+		td {
+			border: 1px solid #AAA;
+			width: 40px;
+			height: 40px;
+		}
+	</style>
+
+
+	<script>
+
+		// jQuery Filter 의 기본 필터의 사용
+		// jQuery 에서 지원하고 있는 여러가지 필터중에 기본이 되는 부분과 jQuery의 DOM 필터 메서드,(filter())를 사용하여 사용자가 원하는 요소를 선택하는 방법
+		// 원하는 요소를 다양한 방식으로 걸러내는 역할을 하며, 필터는 단독으로도 사용이 가능하고 필터와 필터를 연결해서도 사용이 가능
+
+
+
+		// 1. :animated 에니메이션이 동작중인 모든 요소와 일치하는 요소를 반환
+		// 2. :eq(index) Index에 해당하는 요소를 반환(단일요소) > [즉, eq 의 index 는 0 부터 시작을 하며 0 이면 요소중 첫번째, 1 이면 두번째 요소가 된다.]
+		// 3. :even 짝수의 요소를 반환 (0 부터 시작)
+		// 4. :odd 홀수의 요소를 반환 (0 부터 시작)
+		// 5. :first 첫번째 요소를 반환
+		// 6. :last 마지막 요소를 반환
+		// 7. :gt(index) Index 보다 높은 Index 에 해당되는 요소를 모두 반환
+		// 8. :lt(index) Index 보다 낮은 Index 에 해당되는 요소를 모두 반환
+		// 9. :header 모든 헤더 요소들을 반환(h1,h2,h3….)
+		// 10. :not(selector) Selector 와 일치되는 요소를 제외한 나머지 요소를 반환
+		// 11. :focus 현재 포커스가 위치한 요소를 반환 (1.6 이상에서 지원 - jQuery 1.6 버전에서 새롭게 추가된 필터)
+
+
+
+		$(document).ready(function () {
+			$("tr:eq(0) > td:eq(7)").css("background", "#EEE"); // 2. td 요소중에 첫번째 항목만을 선택
+			$("tr:eq(1) > td:gt(2)").css("background", "#EEE"); // 7. td 요소중에 2 번째 요소 이후의 모든 요소를 선택
+			$("tr:eq(1) > td:lt(2)").css("background", "#EEE"); // 8. td 요소중에 2 번째 요소 이전의 모든 요소를 선택
+			$("tr:eq(2) > td:odd").css("background","#EEE"); // 4. td 요소중에 홀수번째 요소를 선택한다. [ 홀수의 구분은 eq 의 index 와 동일하게 구분 됨 ]
+			$("tr:eq(2) > td:even").css("background","#EEE"); // 3. td 요소중에 짝수번째 요소를 선택한다. [ 짝수 구분은 eq 의 index 와 동일하게 구분 됨 ]
+			$("tr:eq(3) > td:first").css("background", "#AAA"); // 5. td 요소중에 첫번째 요소를 선택
+			$("tr:eq(3) > td:last").css("background", "#BBB"); // 6. td 요소중에  마지막 요소를 선택
+		});
+
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<div>
+		<table>
+			<tr>
+				<td>#1</td>
+				<td>#2</td>
+				<td>#3</td>
+				<td>#4</td>
+				<td>#5</td>
+				<td>#6</td>
+				<td>#7</td>
+				<td>#8</td>
+				<td>#9</td>
+				<td>#10</td>
+			</tr>
+			<tr>
+				<td>#11</td>
+				<td>#12</td>
+				<td>#13</td>
+				<td>#14</td>
+				<td>#15</td>
+				<td>#16</td>
+				<td>#17</td>
+				<td>#18</td>
+				<td>#19</td>
+				<td>#20</td>
+			</tr>
+			<tr>
+				<td>#21</td>
+				<td>#22</td>
+				<td>#23</td>
+				<td>#24</td>
+				<td>#25</td>
+				<td>#26</td>
+				<td>#27</td>
+				<td>#28</td>
+				<td>#29</td>
+				<td>#30</td>
+			</tr>
+			<tr>
+				<td>#31</td>
+				<td>#32</td>
+				<td>#33</td>
+				<td>#34</td>
+				<td>#35</td>
+				<td>#36</td>
+				<td>#37</td>
+				<td>#38</td>
+				<td>#39</td>
+				<td>#40</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

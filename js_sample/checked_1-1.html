@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+
+
+
+	</style>
+
+	<script>
+
+		window.onload = function () { // 윈도우가 현재 파일을 전부 읽고난(인식) 후 현재 함수를 실행
+			document.getElementById('checked').checked = false; // id 값이 checked인 값 접근 후 checked 속성에 false 값 대입(즉, 체크를 해제해라)
+			document.getElementById('unchecked').checked = true; // id 값이 unchecked인 값 접근 후 checked 속성에 true 값 대입(즉, 체크해라)
+		};
+
+	</script>
+
+</head>
+
+<body>
+
+	<label for="checked">checked</label> <!-- <label for="input 태그 아이디 값"></label>은 그룹을 묶어주거나 연결해주는 역할 -->
+	<input type="radio" id="checked" checked /> <!-- ex) 라디오(동그라미)를 누르지 않아도 라디오(동그라미) 주변 글자를 눌러도 체크가 됨 -->
+	<label for="unchecked">unchecked</label>
+	<input type="radio" id="unchecked" />
+
+</body>
+
+</html>

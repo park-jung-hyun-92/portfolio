@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script
+		src="http://code.jquery.com/jquery-latest.js"> // jQuery 를 페이지에 참조
+	</script>
+
+	<style>
+
+		div,
+		span {
+			width: 40px;
+			height: 40px;
+			float: left;
+			padding: 10px;
+			margin: 10px;
+		}
+
+	</style>
+
+
+	<script>
+
+		// // 0. $(Selector) === jQuery(Selector) 서로 같은 코드임.
+		// // getElementBy() 메서드의 경우 몇몇 브라우저에서 지원을 하고 있지 않음 [IE8 이하 버전에서는 지원하지 않으며, IE9 과 HTML 의 차세대 버전인 HTML5 에서는 지원 함]
+
+
+		// // 1. All Selector : $(“*”)
+
+		$(document).ready(function () { // 페이지(이 문서)의 HTML DOM 이 모두 로드가 되면 실행이 되는 함수로 자바스크립트의 onload 메서드의 확장된 역할 [ 즉, 제이쿼리(문서가).준비가되면 = 이문서를 모두 읽어들이면 ]
+			$("*").css("border","1px solid #ff0000"); // HTML 문서내의 모든 엘리먼트(요소)의 개체를 찾아 선 두께는 1px, 선 색상은 빨강, 선 모양은 실선으로 변경해라
+		});
+
+
+		// // 2. ID Selector : $(“#id”)
+		// // 자바스크립트의 getElementById()와 동일한 역할을 하고 있는 셀렉터
+
+		$(document).ready(function () {
+			$("#content").css("background", "yellow"); // id의 값이 content인 요소의 개체를 찾아 배경색을 노랑색으로 변경해라
+		});
+
+
+		// // 3. Element Selector : $(“element”)
+		// // 자바스크립트의 getElementsBytagName()과 동일한 역할을 하고 있는 셀렉터
+
+		$(document).ready(function () {
+			$("div").css("border", "2px solid blue"); // div 태그 요소의 개체를 찾아 선 두께는 2px, 선 색상은 파랑, 선 모양은 실선으로 변경해라
+		});
+
+
+		// // 4. Class Selector : $(“.class”)
+		// // 자바스크립트의 getElementsByClassName()과 동일한 역할을 하고 있는 셀렉터
+
+		$(document).ready(function () {
+			$(".myClass").css("border", "2px solid blue"); // class의 값이 myClass인 요소의 개체를 찾아 선 두께는 2px, 선 색상은 파랑, 선 모양은 실선으로 변경해라
+		});
+
+
+		// 5-1. Multiple, Complex Selector : $(“selector1, selector2, selectorN”)
+
+		$(document).ready(function () {
+
+			$("#content, div").css("border", "2px solid blue"); // id의 값이 content인 요소와 div 태그 요소의 개체를 찾아 선 두께는 2px, 선 색상은 파랑, 선 모양은 실선으로 변경해라
+		});
+
+
+		// 5-2. Multiple, Complex Selector : $(“#id div.class”)
+
+		$(document).ready(function () {
+			$("div.myClass").css("border", "2px solid blue"); // div 태그 요소 중 class의 값이 myclass인 요소의 개체를 찾아 선 두께는 2px, 선 색상은 파랑, 선 모양은 실선으로 변경해라
+		});
+
+	</script>
+
+</head>
+
+<body>
+
+	<h2>제목</h2>
+	<p id="content">1</p>
+	<span class="myClass">2</span>
+	<div>3</div>
+	<span>4</span>
+	<div class="myClass">5</div>
+
+</body>
+
+</html>

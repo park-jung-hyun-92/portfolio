@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- jQuery 를 페이지에 참조 -->
+
+	<style>
+
+		div {
+			background: #FFF;
+			padding: 10px;
+			margin: 10px;
+		}
+
+		table {
+			border: 1px solid #AAA;
+		}
+
+		td {
+			border: 1px solid #AAA;
+			width: 25px;
+			height: 25px;
+		}
+
+	</style>
+
+	<script>
+
+		// 기본필터의 :first, :last 의 경우 해당되는 단일 요소만 선택하지만 > 자식필터(Child Filter)의 경우 단일 요소가 아닌 집합을 선택 하게 된다.
+
+		// 1. :first-child 자식 요소 중 첫번째에 해당하는 요소를 모두 반환
+		// 2. :last-child 자식 요소 중 마지막에 해당하는 요소를 모두 반환
+
+		$(document).ready(function () {
+
+			$("td:first").css("background", "red"); // td 태그중에 첫번째에 있는 요소를 선택하고 배경색을 빨강으로 변경해라
+			$("td:first-child").css("background", "red"); // td 태그중에 첫번째에 해당하는 모든 요소를 선택하고 배경색을 빨강으로 변경해라
+
+			$("td:last").css("background", "red");
+			$("td:last-child").css("background", "red");
+
+		});
+
+
+		// 3. :nth-child > index, even, odd 같은 값을 지정하여 사용을 하거나, 수식을 이용하여 규칙적인 동작을 하도록 할 수 있다는 점
+		// :nth-child(index/odd/even/equation) 자식 요소 중 지정된 값에 해당하는 요소를 모두 반환 [ EX - $(“td:nth-child(0)”), $(“td:nth-child(even)”), $(“td:nth-child(2n+1)”) ]
+
+		$(document).ready(function () {
+
+			$("td:nth-child(2n+1)").css("background","red"); // td 태그중에 2의배수(2n)에 1을 더한 값[n은 1이 아닌 0부터 시작]에 해당하는 위치에 있는 요소를 선택하고 배경색을 빨강으로 변경해라
+			$("td:nth-child(even)").css("background", "red"); // td 태그중에 짝수에 해당하는 위치에 있는 모든 요소를 선택하고 배경색을 빨강으로 변경해라
+			$("td:nth-child(odd)").css("background", "red"); // td 태그중에 홀수에 해당하는 위치에 있는 모든 요소를 선택하고 배경색을 빨강으로 변경해라
+			$("td:nth-child(1)").css("background", "red"); // td 태그중에 첫번째에 해당하는 위치에 있는 모든 요소를 선택하고 배경색을 빨강으로 변경해라
+		});
+
+
+		// 4. :only-child 자식이 부모 요소와 유일한 자식인 모든 요소를 반환
+
+	</script>
+
+</head>
+
+<body style="padding:10px;">
+
+	<div>
+		<table>
+			<tr>
+				<td>#1</td>
+				<td>#2</td>
+				<td>#3</td>
+				<td>#4</td>
+				<td>#5</td>
+			</tr>
+			<tr>
+				<td>#6</td>
+				<td>#7</td>
+				<td>#8</td>
+				<td>#9</td>
+				<td>#10</td>
+			</tr>
+			<tr>
+				<td>#11</td>
+				<td>#12</td>
+				<td>#13</td>
+				<td>#14</td>
+				<td>#15</td>
+			</tr>
+			<tr>
+				<td>#16</td>
+				<td>#17</td>
+				<td>#18</td>
+				<td>#19</td>
+				<td>#20</td>
+			</tr>
+			<tr>
+				<td>#21</td>
+				<td>#22</td>
+				<td>#23</td>
+				<td>#24</td>
+				<td>#25</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+
+
+</html>

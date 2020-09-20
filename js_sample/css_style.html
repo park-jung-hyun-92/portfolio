@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+
+
+
+	</style>
+
+
+	<script>
+
+		// style 사용 방법
+		// 선택자.style.CSS속성 = 값;
+
+		window.onload = function () {
+			var target = document.getElementsByTagName('p')[0];
+			target.style.background = "red"; // 빨간 배경색
+			target.style.fontSize = "40px"; // 글자 사이즈 40px
+			target.style.width = "100px"; // 가로 길이 100px
+			target.style.height = "30px"; // 세로 길이 30px
+			target.style.background = "skyblue"; // 하늘 배경색
+			target.style.boxShadow = "10px 10px 10px lightblue"; // box-shadow : 가로길이값 세로길이값 번짐 효과 그림자 색
+		};
+
+	</script>
+
+</head>
+
+<body>
+
+	<p>1</p>
+
+</body>
+
+</html>

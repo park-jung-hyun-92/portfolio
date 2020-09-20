@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+
+
+
+	</style>
+
+	<script>
+
+		// 변수 let
+		// let은 범위를 블록단위로 갖습니다. 블록은 {} 를 의미합니다.
+		// 즉, 변수명이 선언된 블록인 if문의 {}안에서 선언되었으므로 해당 {}(블록)밖에서는 유효하지 않습니다.
+		// 전역변수(글로벌변수) / 지역변수(로컬변수) 나뉨
+
+		// 1. 전역에서 let 선언하면 전역에서 출력 가능
+		// 2. 지역에서 let 선언하면 지역에서 출력 가능
+		// 3. 전역에서 let 선언하면 지역에서 출력 가능
+		// 4. 지역에서 let 선언하면 전역에서 출력 불가능
+		// 5. 단, 전역에서 선언 후 지역에서 let 없이 변수 선언하면 지역,전역 동일 값
+		// 6. 단, 전역,지역 변수 둘다 선언하면 전역은 전역 값, 지역은 지역 값
+		// 7. 단, 전역,지역 변수 둘다 선언하고 let 없이 지역에서 한번 더 변수 선언하면 전역은 전역 값, 지역은 지역 값
+
+
+		let aaa = "Hello World"; // 전역변수(글로벌변수) - 변수 aaa에 값 "Hello World" 대입
+		let bbb = "Hello World"; // 전역변수(글로벌변수) - 변수 bbb에 값 "Hello World" 대입
+
+		if (true) { // 만약에 맞다면
+
+			let aaa = "hi" // 지역변수(로컬변수) - 변수 aaa에 값 "hi" 대입
+			aaa = "aaa" // 변수 aaa에 값 "aaa" 대입
+			bbb = "bbb" // 변수 bbb에 값 "aaa" 대입
+
+				document.write(aaa + '<br>'); // aaa 값을 출력하고 줄바꿈 해라
+				document.write(bbb + '<br>'); // bbb 값을 출력하고 줄바꿈 해라
+
+		}
+
+		document.write(aaa + '<br>');  // aaa 값을 출력하고 줄바꿈 해라
+		document.write(bbb);  // bbb 값을 출력해라
+
+
+	</script>
+
+	</script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>EVERDEVEL - JavaScript - click event</title>
+
+	<style>
+
+	</style>
+	<script>
+
+		function a() {
+
+			document.getElementById('asdf').checked = true; // id가 asdf인 값 접근 후 checked 속성에 true 값 대입(즉, 체크해라)
+		}
+
+		function b() {
+
+			document.getElementById('asdf').checked = false; // id가 asdf인 값 접근 후 checked 속성에 false 값 대입(즉, 체크를 해제해라)
+		}
+
+		function c() {
+			if (document.getElementById('asdf').checked == true) { // 만약 id 값이 asdf이고 속성 checked의 값이 true가 맞다면
+
+				document.getElementById('asdf').checked = false; // id가 asdf인 값 접근 후 checked 속성에 false 값 대입(즉, 체크를 해제해라)
+
+			} else {											// if문 조건이 일치하지 않는다면(그렇지 않다면)
+
+				document.getElementById('asdf').checked = true; // id가 asdf인 값 접근 후 checked 속성에 true 값 대입(즉, 체크해라)
+			}
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<input type="checkbox" id="asdf">
+	<p onclick="a()">선택</p> <!-- 선택이라는 글자를 클릭하면 a함수 호출 -->
+	<p onclick="b()">해제</p>
+	<p onclick="c()">선택 반대로</p>
+
+</body>
+
+</html>

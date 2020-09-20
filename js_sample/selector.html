@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+
+
+
+	</style>
+
+
+	<script>
+
+		// 셀렉터
+
+		// 1. document.getElementsByClassName(클래스명)[인덱스]
+
+		window.onload = function () {
+			document.getElementsByClassName('hello')[1].style.color = "red";
+		};
+
+
+		// // 2. document.getElementsByTagName(태그명)[인덱스]
+
+		window.onload = function () {
+			document.getElementsByTagName('p')[2].style.color = "red";
+		};
+
+
+		// // 3. document.getElementById(아이디명);
+
+		window.onload = function () {
+			document.getElementById('hello').style.color = "red";
+		};
+
+
+		// 4. document.querySelector()
+
+		// 클래스는 앞에 .
+		// 아이디는 앞에 #
+		// 태그는 그대로 사용
+		// querySelector은 순서를 지정할 수 없음 [즉, 모두 변경도 가능하며, 같은 값으로 정의했을 때 우선순위는 id > calss > tag 순으로 적용]
+
+		window.onload = function () {
+			document.querySelector('.hello').style.color = "blue";
+			document.querySelector('p').style.color = "red";
+			document.querySelector('#hello').style.color = "yellow";
+		};
+
+
+		// 4. document.querySelectorAll()
+
+		// 클래스는 앞에 .
+		// 아이디는 앞에 #
+		// 태그는 그대로 사용
+		// querySelector은 순서를 지정해야 함
+
+		window.onload = function () {
+			document.querySelectorAll('.hello')[1].style.color = "blue";
+			document.querySelectorAll('.hello')[2].style.color = "blue";
+			document.querySelector('#hello').style.color = "yellow";
+			document.querySelectorAll('p')[5].style.color = "red";
+			document.querySelectorAll('p')[6].style.color = "red";
+		};
+
+	</script>
+
+</head>
+
+<body>
+
+	<p>Hello World</p>
+	<p class="hello">Hello World</p>
+	<p class="hello">Hello World</p>
+	<p id="hello">Hello World</p>
+	<p class="hello">Hello World</p>
+	<p>Hello World</p>
+	<p>Hello World</p>
+
+</body>
+
+</html>

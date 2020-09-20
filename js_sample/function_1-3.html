@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>javascript 예제</title>
+
+	<script>
+		function all_start() {
+			var add_str = return_add(10, 5); // 2. 함수명 return_add를 호출하고 파라미터 값 10,5를 넘김 > 6. 그리고 return 값을 add_str 변수에 대입해라
+
+			var minuse_str = return_minuse(7, 1);
+
+			alert(add_str - minuse_str); // 7. 변수 add_str 값 - 변수 minuse_str 값을 경고창에 띄워라
+		}
+
+		function return_add(str1, str2) { // 3. 파라미터 str1, str2에 값 10,5를 대입하고
+			var result = str1 + str2; // 4. 10,5 값을 더한 후 result 변수에 대입
+			return result; // 5. result 값을 리턴해라
+		}
+
+		function return_minuse(str1, str2) {
+			var result = str1 - str2;
+			return result;
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<script>
+
+		all_start(); // 1. all_start 함수 호출
+
+	</script>
+
+</body>
+
+</html>

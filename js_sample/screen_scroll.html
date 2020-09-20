@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+		div {
+			height: 2000px
+		}
+
+		;
+	</style>
+
+
+	<script>
+
+		// scroll 이벤트 사용방법
+		// 스크롤이 움직일 때마다 작동 [즉, 어떠한 목록을 볼 때 스크롤을 아래로 내리다보면 그 다음 데이터가 불러와지는 것]
+
+		// document.addEventListener('scroll', function () {
+			// document.documentElement.scrollTop; // 현재의 스크롤 값을 확인
+		// });
+
+		document.addEventListener('scroll', function () {
+			var a = document.documentElement.scrollTop;  // 현재의 스크롤 값을 a 변수에 대입
+			document.write(a); // 변수 a(현재의 스크롤 값) 출력
+		});
+
+	</script>
+
+</head>
+
+<body>
+
+	<div></div>
+
+</body>
+
+</html>

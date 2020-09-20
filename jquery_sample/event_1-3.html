@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- jQuery 를 페이지에 참조 -->
+
+	<style>
+		div,
+		pre {
+			background: #FFF;
+			padding: 10px;
+			margin: 10px;
+		}
+	</style>
+
+	<script>
+		// 1. .live() > 여러 이벤트를 한번에 등록 하는 것도 가능하며, 동적으로 생성될 개체나 요소에 대해서도 이벤트를 맵핑 할 수 있다
+		// 1-1 .live(eventType, handler)
+		// 1-2 .live(events)
+		// 1-3 .live(eventType, eventData, handler)
+
+		$(document).ready(function () {
+			$('#btnAdd').click(function () {
+				$('ul').append('<li>list item Add(' + $('li').length + ')</li>');
+			});
+
+
+			$('li').live('click', function () {
+				alert($(this).text());
+			});
+		});
+
+
+
+
+		// 2. .die() > 생명을(이벤트) 주었으니, 죽일(삭제) 수 도 있음
+		// 클라이언트에서 돔의 변화를 계속 감지하므로 클라이언트에 부하를 줄 수 있고, 어느순간 해당 기능이 필요 없어지면 불필요한 부하를 막거나 계속되는 이벤트 맵핑으로 인한 오류를 미연에 방지하기 위함
+
+		// $(document).ready(function () {
+
+		// 	$('#btnAdd').click(function () {
+
+		// 		$('ul').append('<li>list item Add(' + $('li').length + ')</li>');
+
+		// 	});
+
+		// 	$('li').live('click', function () {
+		// 		alert($(this).text());
+		// 	});
+
+		// 	$('#btnDie').click(eventDie);
+		// });
+
+		// function eventDie() {
+		// 	$('li').die(); // li 태그와 연결된 모든 이벤트를 삭제
+		// 	// $('li').die('click'); // li 요소와 연결된 "click" 이벤트만을 삭제 한다
+		// }
+
+
+
+		// 3. .one() > 추가된 이벤트는 딱 한번만 실행이 되고 사라지게 된다
+		// 3-1 .one(eventType, [eventData], handler(eventObject))
+
+		// $(document).ready(function () {
+		// 	$('li').one('click', function () { // li 태그를 클릭하면 딱 한번만
+		// 		alert($(this).text()); // 경고창에 li 태그 내용을 보여준다
+		// 	});
+		// });
+	</script>
+
+</head>
+
+<body>
+
+	<div>
+		<ul>
+			<li>list item 0</li>
+		</ul>
+		<input type="button" id="btnAdd" value="Add Element" />
+		<input type="button" id="btnDie" value="Event Die" />
+	</div>
+
+
+
+	<div>
+		<ul>
+			<li>list item 1</li>
+			<li>list item 2</li>
+			<li>list item 3</li>
+			<li>list item 4</li>
+			<li>list item 5</li>
+		</ul>
+	</div>
+
+</body>
+
+</html>

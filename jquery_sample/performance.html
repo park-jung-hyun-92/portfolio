@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- jQuery 를 페이지에 참조 -->
+
+	<style>
+
+	</style>
+
+	<script>
+
+		// 1. 셀렉터의 구체화
+
+		// 단순히 $(“.myClass”) 보다는 $(“div > ul > li.class”)처럼 많은 정보를 주면 jQuery 가 HTML 문서에서 탐색하는 범위가 줄어들어 성능 향상의 효과가 있다.
+
+
+
+		// 2. 셀렉터의 사용 자제
+
+		// 같은 요소를 여러번 셀렉트 하는 경우가 발생 > 이런 경우에는 기존에 사용한 셀렉터를 재사용(변수 사용) 하거나, .end() 메서드를 통해 반복 사용하지 않는 것이 좋다.
+
+
+
+		// 3. 순수 자바스크립트 사용
+
+		// jQuery는 javascirpt의 복잡한 함수로 이루어져 있음
+		// jQuery 함수를 실행하면 내부에서 구현된 복잡한 로직을 통해 javascript를 실행하므로 해당 로직을 피하면 그만큼 성능이 올라간다고 생각을 하면 됨
+		// 또한, DOM 처리를 할 때에도 jQuery 보다는 순수 javascript 를 사용하는 것이 성능 면에서 큰 이득
+		// 예를들면,
+		// 1-1 $(„#id‟) 보다는 document.getElementById(“id”)
+		// 1-2 $(“#id”).css(“color”, “red”) 보다는 document.getElementById(“id”).style.color = “red”;
+		// 1-3 $(“#id”).hide() 보다는 document.getElementById(“id”).style.display = „none‟;
+
+		// $(document).ready(function () {
+		// 	var $htmlData = $("<ul>");
+		// 	for (var i = 0; i < 10; i++) {
+		// 		$htmlData.append($("<li>").text('승연아빠(' + i.toString() + ')'));
+		// 	}
+		// 	$htmlData.appendTo('#contents');
+		// });
+
+		// 위 방법 보다는 아래 방법이 더 성능면에서 좋다
+
+		$(document).ready(function () {
+			var htmlData = '<ul>';
+			for (var i = 0; i < 10; i++) {
+				htmlData += '<li>승연아빠(' + i.toString() + ')';
+			}
+			htmlData += '</ul>'; // htmldate = htmldate + '</ul>'
+			// $('#contents').text(htmlData);
+			$('#contents').html(htmlData);
+		});
+
+
+
+		// 4. css()
+
+		// css() 메서드를 사용하여, 선택한 개체에 특정 스타일을 적용할 경우 내부에서 많은 처리를 하게 됨
+		// 이런 경우가 많다면 스타일시트를 통한 각각의 스타일 클래스를 작성하고, 해당 클래스를 적용하는게 좋음
+
+	</script>
+
+</head>
+
+<body>
+
+
+	<div id="contents"></div>
+
+</body>
+
+</html>

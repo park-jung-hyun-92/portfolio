@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title></title>
+
+	<style>
+
+
+
+	</style>
+
+	<script>
+
+		// swich문
+		// switch (변수명){
+		//	case 값A :
+		//		값이 A일 때 실행할 명령문;
+		//     	break;
+		//	case 값B :
+		//    	값이 B일 때 실행할 명령문;
+		//     	break;
+		// 	case 값C :
+		//  	값이 C일 때 실행할 명령문;
+		//     	break;
+		// 	case 값D :
+		//  	값이 D일 때 실행할 명령문;
+		//     	break;
+		// 	case 값E :
+		//     	값이 E일 때 실행할 명령문;
+		//     	break;
+		// 	default :
+		//     	위의 값 A ~ E 모두 아닐때 실행할 명령문;
+		// }
+
+
+		// break가 있는 경우 - 해당 변수명의 값과 case의 값이 일치하면 출력하고 끝(뒷부분 실행 안됨)
+
+		favorite = "a";
+		switch (favorite) {
+			case "a":
+				document.write("1");
+				break;
+			case "b":
+				document.write("2");
+				break;
+			case "c":
+				document.write("3");
+				break;
+			case "d":
+				document.write("4");
+				break;
+			case "e":
+				document.write("5");
+				break;
+			case "f":
+				document.write("6");
+				break;
+			default:
+				document.write("7");
+		}
+
+
+		// break가 없는 경우 - 해당 변수명의 값과 case의 값이 일치하면 현재시점부터 ~ 뒷부분까지 모두 실행함
+
+		favorite = "1";
+		switch (favorite) {
+			case "1":
+				document.write("ㅁ");
+
+			case "2":
+				document.write("b"");
+
+			case "3":
+				document.write("c");
+
+			case "4":
+				document.write("d");
+
+			case "5":
+				document.write("e");
+
+			case "6":
+				document.write("f");
+
+			default:
+				document.write("g");
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

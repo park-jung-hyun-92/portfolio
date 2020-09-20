@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>EVERDEVEL - JavaScript - click event</title>
+
+	<style>
+
+		.hello {
+			background-color: blue;
+		}
+
+	</style>
+	<script>
+
+		// 1. 속성과 속성값 지정 및 변경
+		// 1-1 선택자.setAttribute(속성명, 속성값)
+
+
+		window.onload = function () {
+			var a = document.getElementsByTagName('input')[0];
+
+			a.setAttribute('class', 'hello');
+		};
+
+
+		// 2. 속성 값 가져오기
+		// 2-1 선택자.getAttribute(속성명)
+
+		window.onload = function () {
+
+			var b = document.getElementsByTagName('input')[0];
+
+			bbb = b.getAttribute('type');
+
+			document.write(bbb);
+		};
+
+
+		// 3. 속성 제거하기
+		// 3-1 선택자.removeAttribute(속성명)
+
+		window.onload = function () {
+
+			var b = document.getElementsByTagName('input')[0];
+
+			bbb = b.getAttribute('type');
+
+			if (bbb == "button") {
+				target.removeAttribute('type');
+			}
+
+			document.write(bbb);
+		};
+
+
+		// 4. 속성 유/무 확인하기
+		// 4-1 선택자.hasAttribute(속성명);
+
+		window.onload = function () {
+
+			var b = document.getElementsByTagName('input')[0];
+
+			bbb = b.hasAttribute('type');
+
+			if (bbb == true) {
+
+				b.setAttribute('type', 'text');
+				b.setAttribute('value', "222");
+			}
+		};
+
+
+		// 2번째 예제
+
+		window.onload = function () {
+			var target = document.getElementsByTagName('input')[0]; // input 태그중에 [0]번째 인덱스에 접근하는 코드를 target 변수에 대입
+			var attrValue = target.setAttribute('type','password'); // input 태그중에 [0]번째 인덱스에 접근하고 타입을 password로 변경하는 코드를 attrValue 변수에 대입
+			document.getElementsByTagName('input')[0].type = "password"; // input 태그중에 [0]번째 인덱스에 접근 후 타입을 password로 변경
+			var aaa = target.getAttribute('type'); // input 태그중에 [0]번째 인덱스에 접근하고 어떤 type 속성을 갖고 있는지 확인하는 코드를 aaa 변수에 대입
+			document.write(document.getElementById('bbb').type); // id가 bbb인 값 접근 후 어떤 type 속성을 갖고있는지 확인하여 출력해라
+			document.write(target.type); // input 태그중에 [0]번째 인덱스에 접근 후 어떤 type 속성을 갖고있는지 확인하여 출력해라
+			document.write(aaa); // 변수 aaa 값을 출력를 출력해라
+		};
+	</script>
+
+</head>
+
+<body>
+
+	<input type="button">111
+
+
+	<input type="text" id="bbb">
+
+
+</body>
+
+</html>
