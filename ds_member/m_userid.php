@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/top.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
 <style type="text/css">
 	.td_center { 
@@ -58,4 +58,4 @@
 
 <div style="clear:left"></div>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/bottom.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

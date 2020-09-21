@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/top.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
 <?php
 
@@ -35,4 +35,4 @@ mysqli_query($conn, $sql);
    location.href="/ds_member/m_edit.php"
 </script>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/bottom.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

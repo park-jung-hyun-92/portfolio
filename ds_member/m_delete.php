@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/top.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
 <div style="padding:0 800px;">
 	<div style="width:300px; text-align:center;">
@@ -13,4 +13,4 @@
 	</div>
 </div>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/bottom.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

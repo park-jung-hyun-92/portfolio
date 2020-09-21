@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/top.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
 <?php
 
@@ -7,6 +7,19 @@ $n_content = $_POST['n_content'];
 $n_file1 = $_POST['n_file1'];
 $n_file2 = $_POST['n_file2'];
 $n_file3 = $_POST['n_file3'];
+
+$uploads_dir = '../images/img_notice';
+
+$n_file1 = $_FILES['n_file1']['name'];
+$img_tmp_file1 = $_FILES['n_file1']['tmp_name'];
+$n_file2 = $_FILES['n_file2']['name'];
+$img_tmp_file2 = $_FILES['n_file2']['tmp_name'];
+$n_file3 = $_FILES['n_file3']['name'];
+$img_tmp_file3 = $_FILES['n_file3']['tmp_name'];
+
+move_uploaded_file( $img_tmp_file1, "$uploads_dir/$n_file1");
+move_uploaded_file( $img_tmp_file2, "$uploads_dir/$n_file2");
+move_uploaded_file( $img_tmp_file3, "$uploads_dir/$n_file3");
 
 $sql = "select * from ds_member where m_id = '". $_SESSION['m_login_u'] ."'";
 $result = mysqli_query($conn, $sql);
@@ -50,4 +63,4 @@ mysqli_query($conn, $sql);
 
 <div style="clear:left"></div>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/bottom.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/top.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
 <div align="center" style="padding: 40px; 0px;">
 <b><a href="/ds_notice/n_list_1.php"><input type="button" name="business_1" value="공지사항" style="width: 170pt; height: 40pt; background-color:#ed6d01; color:white; font-size:16px; margin:20px;"></a>
@@ -16,6 +16,8 @@
 
 $n_num = $_GET['n_num'];
 
+$uploads_dir = '../images/img_notice';
+
 $sql = "select * from ds_notice2 where n_num = '". $n_num ."'";
 $result=mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result);
@@ -32,7 +34,7 @@ $row = mysqli_fetch_array($result);
 	</div>
 	<div class="col-md-10" style="padding:0px 0px 0px 330px;">
 		<div style="border-bottom: 3px solid #262161; width:103%;"></div>
-			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><?php echo $row['n_content']; ?></div>
+			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file']?>"<?php echo $row['n_content']; ?>'></div>
 	</div>
 		
 </div>
@@ -42,4 +44,4 @@ $row = mysqli_fetch_array($result);
 <div style="padding:60px 0px 0px 330px;"><input type="button" style="background-color:#000; color:white;" value="목록보기" onclick="location.href='/ds_notice/n_list_2.php'"></div>
 		
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/bottom.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/top.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
 <?php
 
@@ -8,35 +8,31 @@ $n_select_serch2 = $_POST['n_select_serch2'];
 $page = $_GET['page'];
 $sort = $_GET['sort'];
 
-echo $sort;
-echo '<br>';
-
 if($page == '') $page = $_POST['page'];
-if($page == '') $page = 1; //페이지 번호가 없으면 1 
+if($page == '') $page = 1; //페이지 번호가 없으면 1
 
 /**********************************************/
-$list_num =5; //한 페이지에 보여줄 목록 갯수 
-$page_num =3; //한 화면에 보여줄 페이지 링크(묶음) 갯수 
+$list_num =5; //한 페이지에 보여줄 목록 갯수
+$page_num =3; //한 화면에 보여줄 페이지 링크(묶음) 갯수
 $offset = $list_num*($page-1); //한 페이지의 시작할 글 번호[0번째 인덱스가 1임]
 /**********************************************/
 
-if($sort == "" ) { 
-	$sort = $_POST['sort']; 
-echo $sort;
+if($sort == "" ) {
+	$sort = $_POST['sort'];
 
 }
 if ($sort == "") {
 	$sort = "desc"; //desc 내림차순[최신순] && asc 올림차순[과거순]
 }
 
-$orderby = " order by n_date ". $sort; 
+$orderby = " order by n_date ". $sort;
 
 /**********************************************/
 // 컬럼값은 없고 / 검색어는 있다
 if ($n_select_join2 == "" && $n_select_serch2 != "") {
    $where = " WHERE n_title LIKE '%". $n_select_serch2 ."%' OR n_name LIKE '%". $n_select_serch2 ."%' ";
 } else {
-	// 컬럼값이 빈값이고 / 검색값도 빈값이면 
+	// 컬럼값이 빈값이고 / 검색값도 빈값이면
 	if( $n_select_join2 == "" && $n_select_serch2 == "") {
 	} else{
 		$where = "where $n_select_join2 like '%$n_select_serch2%'";
@@ -54,21 +50,21 @@ $total_no=$row[0]; //결과를 배열값으로 담은 목록에 인덱스 0번�
 /**********************************************/
 
 /**********************************************/
-//전체 페이지 수와 현재 글 번호를 구합니다. 
+//전체 페이지 수와 현재 글 번호를 구합니다.
 $total_page=ceil($total_no/$list_num); //전체 페이지수[ceil=무조건 올림]
 
-$cur_num=$total_no - $list_num*($page-1); //현재 글 번호 
+$cur_num=$total_no - $list_num*($page-1); //현재 글 번호
 /**********************************************/
 
 $sql = "
-	select * from 
-		ds_notice1 
+	select * from
+		ds_notice1
 	". $where ."
 	". $orderby ."
 	limit $offset, $list_num
 ";
 
-$result=mysqli_query($conn, $sql); 
+$result=mysqli_query($conn, $sql);
 ?>
 
 <!-- ********************************************** -->
@@ -117,18 +113,18 @@ $result=mysqli_query($conn, $sql);
 		<tbody>
 <?php
 /**********************************************/
-		while ($row = mysqli_fetch_array($result)) //반복문이며, 결과값($reesult)을 배열값으로 변환 후 $row 대입 
-		{	
-?>	
+		while ($row = mysqli_fetch_array($result)) //반복문이며, 결과값($reesult)을 배열값으로 변환 후 $row 대입
+		{
+?>
 			<tr style="border-bottom: 1px solid #dfe3e6;">
 				<td style="text-align:center;"><?php echo $cur_num;?></td>
 				<td style="text-align:center;" width="70%"><a href="/ds_notice/n_view_1.php?n_num=<?=$row['n_num']; ?>"><?php echo $row['n_title']; ?></a></td>
 				<td style="text-align:center;" width="10%"><?php echo $row['n_name']; ?></td>
 				<td style="text-align:center;"><?php echo $row['n_date'] ?></td>
 			</tr>
-<?php	
+<?php
 	$cur_num --; //--; 변수 값에서 하나씩 값을 마이너스 하기 && ++; 변수 값에서 하나씩 값을 더하기
-		}  
+		}
 /**********************************************/
 ?>
 		</tbody>
@@ -136,12 +132,12 @@ $result=mysqli_query($conn, $sql);
 
 	 <table>
       <tr>
-         <td>   
+         <td>
             <div>
                <?php
 			   /**********************************************/
 				//사용자 정의 함수[페이징 함수]
-                  page_avg($total_page, $page_num, $page, $src_name, $src_value,"/ds_notice/n_list_1.php?url=1&sort=$sort"); 
+                  page_avg($total_page, $page_num, $page, $src_name, $src_value,"/ds_notice/n_list_1.php?url=1&sort=$sort");
 			  /**********************************************/
                 ?>
             </div>
@@ -149,12 +145,12 @@ $result=mysqli_query($conn, $sql);
       </tr>
    </table>
 
-<?php 
-	if ($_SESSION['m_login_level'] == '10') 	{ 
+<?php
+	if ($_SESSION['m_login_level'] == '10') 	{
 ?>
 		<div style="text-align:right;"><input type="button" value="글쓰기" onclick="location.href='/ds_notice/n_write_1.php'"></div>
-<?php 
-	} 
+<?php
+	}
 ?>
 
 <form id="form_n_list_2" name="form_n_list_2" method="post" action="n_list_1.php">
@@ -166,10 +162,10 @@ $result=mysqli_query($conn, $sql);
 		</select>
 		<input type="text" name="n_select_serch2" style="padding-left:7px;">
 		<input type="submit" value="검색">
-		<input type="hidden1" name="sort" value="<?php echo $sort ?>">
+		<input type="hidden" name="sort" value="<?php echo $sort ?>">
 	</div>
 </form>
 
 <div style="clear:left"></div> <!--div 영역 겹치지 않게 해주는 기능-->
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include_all/bottom.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>
