@@ -1,1 +1,25 @@
-.tap { width: 222pt; height: 40pt; background-color:#ed6d01; color:white; font-size:16px; margin:5px; }
+.tap {
+	width: 222pt;
+	height: 40pt;
+	background-color: #ed6d01;
+	color: white;
+	font-size: 16px;
+	margin: 5px;
+}
+
+.td_center {
+	text-align: center;
+	font-size: 15px;
+}
+
+.th_left {
+	width: 35%;
+	text-align: center;
+}
+
+.title_div{
+	margin: 0 0 15px 0;
+	font-size:30px;
+	font-weight: bold;
+	color:#337AB7;
+}

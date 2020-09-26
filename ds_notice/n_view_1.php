@@ -34,19 +34,34 @@ $row = mysqli_fetch_array($result);
 	</div>
 	<div class="col-md-10" style="padding:0px 0px 0px 330px;">
 		<div style="border-bottom: 3px solid #262161; width:103%;"></div>
-			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file1']?>"></div>
-			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><?php echo $row['n_content']; ?></div>
-			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file2']?>"></div>
-			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><?php echo $row['n_content']; ?></div>
-			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file3']?>"></div>
-			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><?php echo $row['n_content']; ?></div>
+			<?php if($row['n_file1'] !== "") {?>
+				<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file1']?>"></div><?php }?>
+			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><?php echo nl2br($row['n_content']); ?></div>
+
+			<?php if($row['n_file2'] !== "") {?>
+						<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file2']?>"></div><?php } ?>					
+			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"></div>
+			
+			<?php if($row['n_file3'] !== "") {?>
+					<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file3']?>"></div> <?php }
+				 ?>
+			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"></div>
 	</div>
 		
 </div>
 
 <div style="clear:left"></div>	
 
-<div style="padding:60px 0px 0px 330px;"><input type="button" style="background-color:#000; color:white;" value="목록보기" onclick="location.href='/ds_notice/n_list_1.php'"></div>
-		
 
+<?php
+	if ($_SESSION['m_login_level'] == '10') 	{
+?>
+		<div style="padding:30px 0px 0px 350px;"><input type="button" style="background-color:#000; color:white;" value="목록" onclick="location.href='/ds_notice/n_list_1.php'">&nbsp;&nbsp;
+		<input type="button" style="background-color:#000; color:white;" value="수정" onclick="location.href='/ds_notice/n_edit_1.php?n_num=<?=$n_num?>'">&nbsp;&nbsp;
+		<input type="button" style="background-color:#000; color:white;" value="삭제" onclick="location.href='/ds_notice/n_delete_ok_1.php?n_num=<?=$n_num?>'"></div>
+<?php
+	} else { ?>
+		<div style="padding:30px 0px 0px 350px;"><input type="button" style="background-color:#000; color:white;" value="목록" onclick="location.href='/ds_notice/n_list_1.php'"></div>
+<?php } ?>
+		
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

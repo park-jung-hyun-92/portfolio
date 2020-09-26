@@ -1,9 +1,6 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
-<div align="center" style="padding: 40px; 0px;">
-<b><a href="/ds_notice/n_list_1.php"><input type="button" name="business_1" value="공지사항" style="width: 170pt; height: 40pt; background-color:#ed6d01; color:white; font-size:16px; margin:20px;"></a>
-<a href="/ds_notice/n_list_2.php"><input type="button" name="business_2" value="제작가이드" style="width: 170pt; height: 40pt; background-color:#ed6d01; color:white; font-size:16px; margin:20px;"></a></b>
-</div>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/tap_notice.php'; ?>
 
 <div>
 	<span style="padding:0px 0px 0px 330px;">
@@ -13,10 +10,9 @@
 </div>
 
 
-<form enctype='multipart/form-data' id="form_write_n1" name="form_write_n1" method="post" action="n_write_ok_1.php">
+<form enctype='multipart/form-data' id="form_write_n1" name="form_write_n1" method="post" action="write_ok.php">
 	<div class="col-md-10" style="padding:0px 0px 0px 330px; padding-top:30px;">
 		<table class="table">
-			<tbody>
 				<tr>
 					<td style="text-align:center;" width="30%">제목</td>
 					<td><input type="text" name="n_title" size="56"></td>
@@ -37,11 +33,11 @@
 					<td style="text-align:center;">파일3</td>
 					<td><input type="file" name="n_file3" size="70"></td>
 				</tr>
-			</tbody>
 				<tr>
-					<td></td>
-					<td style="text-align:center;"><input type="submit" name="n_write" value="저장">&nbsp;
-					<input type="button" value="취소" onclick="location.href='/ds_notice/n_list_1.php'"></td>
+					<td colspan="2" style="text-align:center;">
+						<input type="submit" name="n_write" value="저장">&nbsp;
+						<input type="button" value="취소" onclick="location.href='./list.php'">
+					</td>
 				</tr>
 		</table>
 </form>

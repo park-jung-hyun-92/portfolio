@@ -1,14 +1,11 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
-<div align="center" style="padding: 40px; 0px;">
-<b><a href="/ds_notice/n_list_1.php"><input type="button" name="business_1" value="공지사항" style="width: 170pt; height: 40pt; background-color:#ed6d01; color:white; font-size:16px; margin:20px;"></a>
-<a href="/ds_notice/n_list_2.php"><input type="button" name="business_2" value="제작가이드" style="width: 170pt; height: 40pt; background-color:#ed6d01; color:white; font-size:16px; margin:20px;"></a></b>
-</div>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/tap_notice.php'; ?>
 
 <div>
 	<span style="padding:0px 0px 0px 330px;">
 		<span style="color: #ff6600; font-size: 40px;">●</span>
-		<span style="color: #333; font-size: 30px;">공지사항</span>
+		<span style="color: #333; font-size: 30px;">상세보기</span>
 	</span>
 </div>
 
@@ -34,24 +31,33 @@ $row = mysqli_fetch_array($result);
 	</div>
 	<div class="col-md-10" style="padding:0px 0px 0px 330px;">
 		<div style="border-bottom: 3px solid #262161; width:103%;"></div>
-		<?php if($row['n_file'] !== "") { ?>
-			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file']?>"> <?php } ?>
-			<?php echo $row['n_content']; ?></div>  
+			<?php if($row['n_file1'] !== "") {?>
+				<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><img src="<?php echo $uploads_dir."/".$row['n_file1']?>"></div>
+			<?php }?>
+			
+			<div style="font-size:17px;"><b>&nbsp;&nbsp;&nbsp;</div><div style="font-size:17px;"><?php echo nl2br($row['n_content']); ?></div>
+
 	</div>
 		
 </div>
 
 <div style="clear:left"></div>	
 
+
 <?php
 	if ($_SESSION['m_login_level'] == '10') 	{
 ?>
-		<div style="padding:30px 0px 0px 350px;"><input type="button" style="background-color:#000; color:white;" value="목록" onclick="location.href='/ds_notice/n_list_2.php'">&nbsp;&nbsp;
-		<input type="button" style="background-color:#000; color:white;" value="수정" onclick="location.href='/ds_notice/n_edit_2.php?n_num=<?=$n_num?>'"></div>
+		<div style="padding:30px 0px 0px 350px;">
+			<input type="button" style="background-color:#000; color:white;" value="목록" onclick="location.href='./list.php'">&nbsp;&nbsp;
+			<input type="button" style="background-color:#000; color:white;" value="수정" onclick="location.href='./edit.php?n_num=<?=$n_num?>'">&nbsp;&nbsp;
+			<input type="button" style="background-color:#000; color:white;" value="삭제" onclick="location.href='./delete_ok.php?n_num=<?=$n_num?>'">
+		</div>
 <?php
-	} else { ?>
-		<div style="padding:30px 0px 0px 350px;"><input type="button" style="background-color:#000; color:white;" value="목록" onclick="location.href='/ds_notice/n_list_2.php'"></div>
-<?php } ?>
+	} else { 
+?>
+		<div style="padding:30px 0px 0px 350px;"><input type="button" style="background-color:#000; color:white;" value="목록" onclick="location.href='./list.php'"></div>
+<?php 
+	} 
+?>
 		
-
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

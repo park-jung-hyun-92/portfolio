@@ -29,20 +29,19 @@
 					<li><a href="/company/company_1.php">회사소개</a></li>
 					<li><a href="/business/business_1.php">사업소개</a></li>
 					<li><a href="/portfolio/portfolio_1.php">포트폴리오</a></li>
-					<li><a href="#4">제작문의</a></li>
-					<li><a href="/ds_notice/n_list_1.php">고객지원</a></li>
+					<li><a href="/notice/list.php">고객지원</a></li>
 
 			<?php
 					if($_SESSION[ 'm_login_u' ])	{ //로그인되었을때
 			?>
-						<li><a href="/ds_member/m_edit.php">회원정보수정</a></li>
-						<li><a href="/ds_member/m_login.php">로그아웃</a></li>
+						<li><a href="/member/edit.php">회원정보수정</a></li>
+						<li><a href="/member/logout.php">로그아웃</a></li>
 
 			<?php } else { //로그인이 안됬을때
-			
-			?> 
-						<li><a href="/ds_member/m_userid.php">회원가입</a></li>
-						<li><a href="/ds_member/m_login.php">로그인</a></li>
+
+			?>
+						<li><a href="/member/join.php">회원가입</a></li>
+						<li><a href="/member/login.php">로그인</a></li>
 			<?php } ?>
 
 				</ul>

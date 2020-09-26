@@ -2,8 +2,8 @@
 
 <?php
 
-$n_select_join2 = $_POST['n_select_join2'];
-$n_select_serch2 = $_POST['n_select_serch2'];
+$n_select_join1 = $_POST['n_select_join1'];
+$n_select_serch1 = $_POST['n_select_serch1'];
 
 $page = $_GET['page'];
 $sort = $_GET['sort'];
@@ -29,15 +29,16 @@ $orderby = " order by n_date ". $sort;
 
 /**********************************************/
 // 컬럼값은 없고 / 검색어는 있다
-if ($n_select_join2 == "" && $n_select_serch2 != "") {
-   $where = " WHERE n_title LIKE '%". $n_select_serch2 ."%' OR n_name LIKE '%". $n_select_serch2 ."%' ";
+if ($n_select_join1 == "" && $n_select_serch1 != "") {
+   $where = " WHERE n_title LIKE '%". $n_select_serch1 ."%' OR n_name LIKE '%". $n_select_serch1 ."%' ";
 } else {
 	// 컬럼값이 빈값이고 / 검색값도 빈값이면
-	if( $n_select_join2 == "" && $n_select_serch2 == "") {
+	if( $n_select_join1 == "" && $n_select_serch1 == "") {
 	} else{
-		$where = "where $n_select_join2 like '%$n_select_serch2%'";
+		$where = "where $n_select_join1 like '%$n_select_serch1%'";
 	}
 }
+
 /**********************************************/
 
 /**********************************************/
@@ -74,8 +75,8 @@ $result=mysqli_query($conn, $sql);
 	//document.form_n_list_2.sort.value > 이문서.접근하고자하는 폼의 name.접근한 폼의 값을 전송하고자 한다면 submit 사용[단 submit은 함수이므로 submit()]
 	function fn_n_select_join1(t)
 	{
-		document.form_n_list_2.sort.value = t.value; //t.value 값을 대입해라
-		document.form_n_list_2.submit(); //대입한 값을 전송해라
+		document.form_n_list_1.sort.value = t.value; //t.value 값을 대입해라
+		document.form_n_list_1.submit(); //대입한 값을 전송해라
 	}
 </script>
 <!-- ********************************************** -->
@@ -153,14 +154,14 @@ $result=mysqli_query($conn, $sql);
 	}
 ?>
 
-<form id="form_n_list_2" name="form_n_list_2" method="post" action="n_list_1.php">
+<form id="form_n_list_1" name="form_n_list_1" method="post" action="n_list_1.php">
 	<div style="padding:30px 470px;">
-		<select name="n_select_join2" style="padding: 1px 0px 5px 0px;">
+		<select name="n_select_join1" style="padding: 1px 0px 5px 0px;">
 			<option value="">전체</option>
 			<option value="n_title">제목</option>
 			<option value="n_name">작성자</option>
 		</select>
-		<input type="text" name="n_select_serch2" style="padding-left:7px;">
+		<input type="text" name="n_select_serch1" style="padding-left:7px;">
 		<input type="submit" value="검색">
 		<input type="hidden" name="sort" value="<?php echo $sort ?>">
 	</div>
