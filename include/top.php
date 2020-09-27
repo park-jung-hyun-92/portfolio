@@ -28,7 +28,7 @@
 				<ul class="nav navbar-nav" style="float:right;">
 					<li><a href="/company/company_1.php">회사소개</a></li>
 					<li><a href="/business/business_1.php">사업소개</a></li>
-					<li><a href="/portfolio/portfolio_1.php">포트폴리오</a></li>
+					<li><a href="/portfolio/list.php">포트폴리오</a></li>
 					<li><a href="/notice/list.php">고객지원</a></li>
 
 			<?php

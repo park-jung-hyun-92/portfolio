@@ -1,6 +1,6 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/tap_notice.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/tap_portfolio.php'; ?>
 
 <div>
 	<span style="padding:0px 0px 0px 330px;">

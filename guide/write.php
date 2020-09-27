@@ -33,7 +33,7 @@
 				</tr>
 		</table>
 </form>
-
+</div>
 <div style="clear:left"></div>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

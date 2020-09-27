@@ -133,8 +133,9 @@ $result=mysqli_query($conn, $sql);
 			<input type="submit" value="검색">
 		</div>
 	</form>
+</div>
 
-	<div style="clear:left"></div>
-	<!--div 영역 겹치지 않게 해주는 기능-->
+<div style="clear:left"></div>
+<!--div 영역 겹치지 않게 해주는 기능-->
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

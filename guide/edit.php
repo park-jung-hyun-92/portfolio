@@ -1,6 +1,6 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/top.php'; ?>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/tap_notice.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/tap_portfolio.php'; ?>
 
 <?php
 
@@ -32,7 +32,30 @@ $row = mysqli_fetch_array($result);
 				</tr>
 				<tr>
 					<td style="text-align:center;">파일1</td>
-					<td><input type="file" name="n_file1" size="70"></td>
+					<td>
+						<input type="file" name="n_file1" size="70">
+						<?php if ($row['n_file1'] != "") { ?>
+							올라간 파일 : <?=$row['n_file1']?>
+						<?php } ?>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">파일2</td>
+					<td>
+						<input type="file" name="n_file2" size="70">
+						<?php if ($row['n_file2'] != "") { ?>
+							올라간 파일 : <?=$row['n_file2']?>
+						<?php } ?>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">파일3</td>
+					<td>
+						<input type="file" name="n_file3" size="70">
+						<?php if ($row['n_file3'] != "") { ?>
+							올라간 파일 : <?=$row['n_file3']?>
+						<?php } ?>
+					</td>
 				</tr>
 				<tr>
 					<td colspan="2" style="text-align:center;">
@@ -46,7 +69,7 @@ $row = mysqli_fetch_array($result);
 		<input type="hidden" name="n_file3_old" value="<?= $row['n_file3'] ?>">
 		<input type="hidden" name="n_num" value="<?php echo $n_num ?>">
 </form>
-
+</div>
 <div style="clear:left"></div>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

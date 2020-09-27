@@ -33,7 +33,7 @@ if ($n_select_join1 == "" && $n_select_serch1 != "") {
 
 /**********************************************/
 // 총 카운트 구하기
-$sql = "select count(*) from ds_notice2 ". $where ."". $orderby .""; //가져오고자하는 목록 쿼리문 작성
+$sql = "select count(*) from portfolio2 ". $where ."". $orderby .""; //가져오고자하는 목록 쿼리문 작성
 $result=mysqli_query($conn,$sql); //작성한 쿼리문 실행 후 결과 목록 담기
 $row=mysqli_fetch_array($result);  //결과 목록을 한줄씩 배열값으로 변환 후 담기
 
@@ -49,7 +49,7 @@ $cur_num=$total_no - $list_num*($page-1); //현재 글 번호
 
 $sql = "
 	select * from
-		ds_notice2
+		portfolio2
 	". $where ."
 	". $orderby ."
 	limit $offset, $list_num
@@ -59,7 +59,7 @@ $result=mysqli_query($conn, $sql);
 ?>
 
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/tap_notice.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/tap_portfolio.php'; ?>
 
 <div>
 	<span style="padding:0px 0px 0px 330px;">
@@ -69,36 +69,34 @@ $result=mysqli_query($conn, $sql);
 </div>
 
 
-<div class="col-md-10" style="padding:0px 0px 0px 330px; padding-top:30px;">
-	<table class="table">
-		<thead>
-			<tr style="border-top: 2px solid #ddd;">
-				<th style="text-align:center;">번호</th>
-				<th style="text-align:center;">제목</th>
-				<th style="text-align:center;">작성자</th>
-				<th style="text-align:center;">작성일</th>
-			</tr>
-		</thead>
-		<tbody>
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+
+		<div>
+
 			<?php
 				/**********************************************/
 				while ($row = mysqli_fetch_array($result)) //반복문이며, 결과값($reesult)을 배열값으로 변환 후 $row 대입
 				{
 			?>
-					<tr style="border-bottom: 1px solid #dfe3e6;">
-						<td style="text-align:center;"><?php echo $cur_num;?></td>
-						<td style="text-align:center;" width="70%"><a href="./view.php?n_num=<?=$row['n_num']; ?>"><?php echo $row['n_title'];?></td>
-						<td style="text-align:center;" width="10%"><?php echo $row['n_name']; ?></td>
-						<td style="text-align:center;"><?php echo $row['n_date'] ?></td>
-					</tr>
+					<div class="gallery">
+						<a href="./view.php?n_num=<?=$row['n_num']; ?>"><img src="../images/img_portfolio2/<?=$row['n_file1']; ?>" width="275" height="200"></a>
+						<div class="desc"><?php echo $row['n_title'];?></div>
+					</div>
 			<?php
 					$cur_num --; //--; 변수 값에서 하나씩 값을 마이너스 하기 && ++; 변수 값에서 하나씩 값을 더하기
 				}
 				/**********************************************/
 			?>
-		</tbody>
-	</table>
 
+		</div>
+
+	</div>
+	<div class="col-md-2"></div>
+</div>
+
+<div class="col-md-10" style="padding:0px 0px 0px 330px; padding-top:30px;">
 	<table>
 		<tr>
 			<td>
@@ -137,5 +135,7 @@ $result=mysqli_query($conn, $sql);
 
 <div style="clear:left"></div>
 <!--div 영역 겹치지 않게 해주는 기능-->
+
+
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

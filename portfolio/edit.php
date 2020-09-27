@@ -6,7 +6,7 @@
 
 $n_num = $_GET['n_num'];
 
-$sql = "select * from ds_notice1 where n_num =". $n_num ;
+$sql = "select * from portfolio where n_num =". $n_num ;
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
