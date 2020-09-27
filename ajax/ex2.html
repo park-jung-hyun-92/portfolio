@@ -15,40 +15,29 @@
 	<script>
 		function init(){
 			$.ajax({
-				url: "/ajax/ex1_ajax1.html",
+				url: "/ajax/ex2.php",
 				type: 'GET',
-				data: "page=1",
-				success: function(data){
-					 for (let i = 0; i < 1000000000; i++) {
-					 }
-					$('#a').html(data);
-				}
-			});
-
-			$.ajax({
-				url: "/ajax/ex1_ajax2.html",
-				type: 'GET',
-				data: "page=1",
-				success: function(data){
-					$('#b').html(data);
-				}
-			});
-
-			$.ajax({
-				url: "/ajax/ex1_ajax3.html",
-				type: 'GET',
-				data: "page=1",
-				success: function(data){
-					$('#c').html(data);
+				data: "id="+ $('#user_id').val() +"&pw="+ $('#user_pw').val(),
+				success: function(ddd){
+					if (ddd == "Y") {
+						alert("로그인 성공");
+					} else {
+						alert("실패");
+					}
+					$('#a').html(ddd);
 				}
 			});
 		}
 
 		$( document ).ready(function() {
-			init();
+//			init();
 		});
 	</script>
 
 	<div id="a"></div>
+	<input type="text" name="user_id" id="user_id">
+	<input type="text" name="user_pw" id="user_pw">
+	<a href="javascript: init()">로그인</a>
+
 </body>
 </html>
