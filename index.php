@@ -113,14 +113,14 @@
 
 			<div>
 			<?php
-				while ($row = mysqli_fetch_array($result)) 
+				while ($row = mysqli_fetch_array($result))
 				{
 			?>
 					<div class="gallery">
 						<a href="/portfolio/view.php?n_num=<?=$row['n_num']; ?>"><img src="/images/img_portfolio/<?=$row['n_file1']; ?>" width="275" height="200"></a>
 						<div class="desc"><?php echo $row['n_title'];?></div>
 					</div>
-			<?php			
+			<?php
 				}
 			?>
 		</div>
@@ -140,14 +140,14 @@
 
 			<div>
 			<?php
-				while ($row = mysqli_fetch_array($result)) 
+				while ($row = mysqli_fetch_array($result))
 				{
 			?>
 					<div class="gallery">
 						<a href="/portfolio2/view.php?n_num=<?=$row['n_num']; ?>"><img src="/images/img_portfolio2/<?=$row['n_file1']; ?>" width="275" height="200"></a>
 						<div class="desc"><?php echo $row['n_title'];?></div>
 					</div>
-			<?php			
+			<?php
 				}
 			?>
 		</div>
