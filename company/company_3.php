@@ -5,10 +5,10 @@
 <div>
 	<span style="padding:0px 0px 0px 330px;">
 		<span style="color: #ff6600; font-size: 40px;">●</span>
-		<span style="color: #333; font-size: 30px;">제작시설</span>
+		<span style="color: #333; font-size: 30px;">제작기계</span>
 	</span>	
 	<div style="font-size:18px; padding:0px 0px 50px 330px;">
-			<p><b>“제품을 만드는 제작시설입니다.”</b></p>
+			<p><b>“제품을 만드는 제작 기계입니다.”</b></p>
 	</div>
 </div>
 

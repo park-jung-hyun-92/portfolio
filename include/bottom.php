@@ -7,7 +7,7 @@
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation"><a href="/company/company_1.php">회사소개</a></li>
 			<li role="presentation"><a href="/business/business_1.php">사업소개</a></li>
-			<li role="presentation"><a href="/portfolio/portfolio_1.php">포트폴리오</a></li>
+			<li role="presentation"><a href="/portfolio/list.php">포트폴리오</a></li>
 			<li role="presentation"><a href="/notice/list.php">고객지원</a></li>
 		</ul>
 

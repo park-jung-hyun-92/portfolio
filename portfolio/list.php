@@ -137,5 +137,4 @@ $result=mysqli_query($conn, $sql);
 <!--div 영역 겹치지 않게 해주는 기능-->
 
 
-
 <?php require_once $_SERVER['DOCUMENT_ROOT'] .'/include/bottom.php'; ?>

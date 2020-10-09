@@ -132,7 +132,10 @@ $result=mysqli_query($conn, $sql);
 			<input type="text" name="n_select_serch1" style="padding-left:7px;">
 			<input type="submit" value="검색">
 		</div>
+
 	</form>
+
+
 </div>
 
 <div style="clear:left"></div>
